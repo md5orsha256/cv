@@ -1,0 +1,22 @@
+name: Upload CV as PDF artefact
+
+on: [push]
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+jobs:
+  cv2pdf:
+    name: Build PDF CV
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: baileyjm02/markdown-to-pdf@v1
+        with:
+          input_dir: .
+          output_dir: pdfs
+          build_html: false
+      - uses: actions/upload-artifact@v1
+        with:
+          name: cv.pdf
+          path: pdfs/cv.pdf
