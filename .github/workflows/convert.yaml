@@ -1,4 +1,4 @@
-name: Upload CV as PDF artefact
+name: Convert Markdown to another formats
 
 on: [push]
 
@@ -21,8 +21,9 @@ jobs:
         with:
           author_name: Dmitry Stepanov
           author_email: stpnv.dmtry@gmail.com
-          message: 'Update CV in another formats'
+          message: '[skip ci] Updating CVs in non-markdown formats'
           add: 'cv.pdf'
+
       - uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
