@@ -12,17 +12,23 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: baileyjm02/markdown-to-pdf@v1
+        name: Convert to PDF
         with:
           input_dir: .
           output_dir: .
           build_html: false
+
+      - name: Convert to docx
+        run: |
+          sudo apt update -y && sudo apt install -y pandoc
+          pandoc -f markdown -t docx cv.md -o cv.docx
 
       - uses: EndBug/add-and-commit@v9
         with:
           author_name: Dmitry Stepanov
           author_email: stpnv.dmtry@gmail.com
           message: '[skip ci] Updating CVs in non-markdown formats'
-          add: 'cv.pdf'
+          add: "['cv.pdf', 'cv.docx']"
 
       - uses: ad-m/github-push-action@master
         with:
