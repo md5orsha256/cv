@@ -1,36 +1,38 @@
-name: Convert Markdown to another formats
-
-on: [push]
-
 env:
-  GITHUB_TOKEN: ${{ github.token }}
+  ASSET_FILENAME: dmitry_stepanov_cv
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README.md'
+
+
+name: Release. Create cv versions in other formats and attach them to the release
 
 jobs:
-  convert:
-    name: Convert to another formats (PDF)
+  build:
+    name: Upload Release Asset
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: baileyjm02/markdown-to-pdf@v1
-        name: Convert to PDF
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Create PDF file
+        uses: BaileyJM02/markdown-to-pdf@v1.2.0
         with:
-          input_dir: .
-          output_dir: .
-          build_html: false
-
-      - name: Convert to docx
+          input_path: README.md
+          output_dir: out
+      - name: Rename PDF file
+        run: cp out/README.pdf ${{ env.ASSET_FILENAME }}.pdf
+      - name: Create DOCX file
         run: |
           sudo apt update -y && sudo apt install -y pandoc
-          pandoc -f markdown -t docx cv.md -o cv.docx
-
-      - uses: EndBug/add-and-commit@v9
+          pandoc -f markdown -t docx README.md -o ${{ env.ASSET_FILENAME }}.docx
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
         with:
-          author_name: Dmitry Stepanov
-          author_email: stpnv.dmtry@gmail.com
-          message: '[skip ci] Updating CVs in non-markdown formats'
-          add: "['cv.pdf', 'cv.docx']"
-
-      - uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+          files: |
+            ${{ env.ASSET_FILENAME }}.pdf
+            ${{ env.ASSET_FILENAME }}.docx
