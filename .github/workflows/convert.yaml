@@ -3,10 +3,8 @@ env:
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'README.md'
+    tags:
+      - '*'
 
 
 name: Release. Create cv versions in other formats and attach them to the release
