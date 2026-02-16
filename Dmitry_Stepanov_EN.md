@@ -36,6 +36,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 *Apr 2023 - Jul 2025 (2 years 4 months) | Bishkek, Kyrgyzstan (Hybrid)*
 
 **Magazine & E-commerce Platform with B2B Marketplace**
+
 - Developed features for digital version of physical magazine and B2B marketplace connecting product brands with dealers
 - **Worked within microservices architecture:** maintained Python/Django services, Laravel PHP microservice, coordinated cross-service integrations
 - Developed features across full stack: Django/DRF backend APIs, React/Next.js frontend components, Angular admin panels
@@ -51,6 +52,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 *Apr 2022 - Mar 2023 (1 year) | Remote*
 
 **Modern Typewriter Configuration & Sync Application**
+
 - **Product context:** web application for modern smart typewriter device, enabling document synchronization, device configuration, and firmware management
 - Led major refactoring effort of core application architecture, breaking down monolithic components into modular, testable units
 - Improved API performance through database query optimization and caching strategies
@@ -66,6 +68,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 *Jan 2021 - Mar 2022 (1 year 3 months) | Bishkek, Kyrgyzstan (Hybrid)*
 
 **Catering Automation Platform**
+
 - Architected backend for mobile ordering application, designing RESTful API for menu browsing, cart management, and order processing
 - Implemented real-time order status updates using WebSocket connections
 - Integrated payment gateway
@@ -73,6 +76,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 - Set up CI/CD pipeline and deployment infrastructure on AWS
 
 **Virtual Real Estate Platform** (continuation from Attractor Software) ⭐
+
 - Continued development and maintenance of map functionality and virtual world system
 - Optimized referral system queries and improved affiliate tree traversal algorithms for better performance
 - Integrated multiple payment providers and maintained checkout flow reliability
@@ -87,6 +91,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 *Sep 2019 - Feb 2021 (1 year 6 months) | Kyrgyzstan*
 
 **Virtual Real Estate Platform** (startup) ⭐
+
 - **Architected map system from scratch:** designed coordinate system, implemented background image processing into tiles (similar to Google Maps approach), built JavaScript library for map rendering and interaction
 - **Built multi-level referral system:** developed complex affiliate tree structure with recursive algorithms for commission distribution across multiple levels
 - **Implemented OAuth 2.0 authorization server:** created standalone SSO service following OAuth 2.0 specification to enable single sign-on for future microservices architecture
@@ -96,6 +101,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 - Integrated multiple payment providers for virtual property purchases with internal virtual currency system
 
 **Cryptocurrency Startup - Financial Dashboard & Referral System**
+
 - **Project context:** large-scale startup with internal cryptocurrency and automation tooling (developed by partner company)
 - Developed OAuth 2.0 authorization server from scratch, implementing full specification compliance
 - Built financial dashboard enabling users to purchase internal cryptocurrency and track their holdings
@@ -112,6 +118,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 *2016 - 2023*
 
 **Career Guidance Platform for Students** (2022-2023, Side Project)
+
 - Participated in system architecture design and technical decision-making
 - **Designed flexible parametric test generator:** built system allowing administrators to create custom psychological and aptitude tests with complex scoring logic, branching scenarios, and personalized recommendations
 - Implemented comprehensive test suite achieving 97% code coverage, ensuring platform reliability for government deployment
@@ -119,6 +126,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 - **Tech Stack:** Python, Django, JavaScript, PostgreSQL
 
 **Public Discussion Platform for Proposed Bills** (2021, Side Project)
+
 - Developed platform enabling citizens to propose amendments to specific sections of legislative bills
 - Implemented granular permission system allowing users to comment on and suggest changes to individual bill paragraphs
 - Built secure data storage ensuring integrity of user contributions and proper attribution
@@ -126,6 +134,7 @@ RESTful API Design, OAuth 2.0, Git, Agile/Scrum, Code Review, Unit/Integration/E
 - **Tech Stack:** Python, Django, JavaScript, PostgreSQL
 
 **Upwork Contracts & Various Projects** (2016-2019)
+
 - WordPress, Drupal, and Flynax CMS customization: developed custom plugins, themes, and integrated third-party services
 - Payment system integrations: Stripe, PayPal, and regional payment providers
 - Custom web application development for small businesses and startups

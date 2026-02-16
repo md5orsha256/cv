@@ -1,13 +1,10 @@
-env:
-  ASSET_FILENAME: dmitry_stepanov_cv
-
 on:
   push:
     tags:
       - '*'
+  workflow_dispatch:
 
-
-name: Release. Create cv versions in other formats and attach them to the release
+name: Release. Create CV versions in other formats and attach them to the release
 
 jobs:
   build:
@@ -15,22 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Create PDF file
-        uses: BaileyJM02/markdown-to-pdf@v1.2.0
-        with:
-          input_path: README.md
-          output_dir: out
-      - name: Rename PDF file
-        run: cp out/README.pdf ${{ env.ASSET_FILENAME }}.pdf
-      - name: Create DOCX file
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
         run: |
-          sudo apt update -y && sudo apt install -y pandoc
-          pandoc -f markdown -t docx README.md -o ${{ env.ASSET_FILENAME }}.docx
+          sudo apt update -y && sudo apt install -y pandoc fonts-noto-color-emoji
+          pip install weasyprint
+
+      - name: Build PDF and DOCX for all CV files
+        run: |
+          for file in *.md; do
+            [ "$file" = "README.md" ] && continue
+            name="${file%.md}"
+            echo "Converting $file -> $name.pdf, $name.docx"
+            pandoc -f markdown --pdf-engine=weasyprint "$file" -o "$name.pdf"
+            pandoc -f markdown -t docx "$file" -o "$name.docx"
+          done
+
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            ${{ env.ASSET_FILENAME }}.pdf
-            ${{ env.ASSET_FILENAME }}.docx
+            *.pdf
+            *.docx
