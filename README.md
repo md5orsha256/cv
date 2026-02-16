@@ -1,3 +1,4 @@
+\[[PDF](https://github.com/md5orsha256/cv/releases/latest/download/dmitry_stepanov_cv.pdf)\]  \[[DOCX](https://github.com/md5orsha256/cv/releases/latest/download/dmitry_stepanov_cv.docx)\]
 # Stepanov Dmitry
 
 Backend developer (2016 - now)
